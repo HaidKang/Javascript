@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 특징 : javascript 는 매개변수는 의미가 없다. 
+        //        즉 값을 담는 그릇으로서의 역할을 하지 않음.
+        //        데이터가 다 객체이기 때문에 참조하는 이름 일 뿐이다.
+        //        참조하는 인자에 대한 정의가 명확하지 않다.
+        //        선언이 2 개 인자여도, 사용할 때 
+        function add(x, y){
+            // javascript 는 arguments 라는 컬렉션이 있고 넘겨진 것들을 다 쌓아 놓음
+            alert(arguments.length);   // 6 출력 - 즉 6개 arguments
+            alert(arguments[5]);   //hello 출력
+            return x +y ;
+        }
+        // 이렇게 
+        document.write(add(16, 4, 5, 6, 7, "hello"));    //20 출력
+
+    </script>
+</body>
+</html>

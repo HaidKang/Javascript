@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printResult()
+        {
+            var btnPrint = document.getElementById("btn-print");
+
+            var x = prompt("x 값을 입력하세요", 0);  
+            var y = prompt("y 값을 입력하세요", 0);  
+            
+            x = parseInt(x);
+            y = parseInt(y);
+            btnPrint.value = x+y;
+        }
+
+        function init(){
+            var btnPrint = document.getElementById("btn-print")
+            // printResult 는 그냥 이름임.
+            btnPrint.onclick = printResult;  
+        }
+
+        window.onload = init;
+    </script>
+    <input type="button" value="클릭" id="btn-print" /><br />
+    <span id="span1">스팬입니다.</span>
+</body>
+</html>

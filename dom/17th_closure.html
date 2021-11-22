@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // javascript 가 가지는 두가지 특징 때문에 발생
+        //   함수를 정의하지 않고, 함수를 객체로 만들어서 그 자체가 정의다.
+        //     즉 객체 자체가 반환 될수도 있고, 함수가 함수 안에서 만들어 질수 있고
+        //     따라서 함수가 가지고 있는 지역 변수가 클러저를 필요로 하게 된다.
+        //     javascript 는 함수 안에 함수 가능
+        
+        // case1) 정상 상황
+        function f1(){
+            var a = 1;  // 지역변수
+            return a;
+        }
+        var a = f1();
+        alert(a);
+
+        // case2) 
+        function f1(){
+            var a = 1;
+
+            return function f2(){
+                return a;
+            }
+        }
+        var f = f1();  // f 는 함수를 나타내는 이름. 함수 참조. 따라서 함수 처럼 사용 할수 있다.
+        var a = f();   // 결국 f2() 함수의 반환 값을 받게 된다.
+        alert(a);
+            
+            f2();
+            function f2(){
+                var a = 2;
+                f3();
+                function f3(){
+                    var a = 3;
+                }
+            }
+        }
+        f1();
+        alert(a);
+    </script>
+    
+</body>
+</html>

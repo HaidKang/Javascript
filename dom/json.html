@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // n id, title 과 같이 묵시적으로 문자열로 인식함
+        // var data = {n id:1, title:"aaa"};   // 이 경우는 오류발생
+        var data = {"n id":1, title:"aaa"};   
+        console.log(data.title)
+        console.log(data["n id"])
+    </script>
+</body>
+</html>

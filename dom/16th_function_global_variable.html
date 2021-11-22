@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //case1) 정상적임 당연한 결과 
+        var a = 1;
+        alert(a);  // 1 출력
+                
+        //case2) undefined 라고 나옴 
+        //     - undefined 의미 : 참조 변수는 선언이 됐는데 값이 정의 되지 않았다.
+        alert(a);
+        var a = 1;
+
+        //case3) var 를 선언하지 않고 사용
+        //     - var가 없으면 window 전역객체 전역 변수가 됨.  - undefined 라고 나오지 않음
+        a = 1;
+        alert(a);
+        
+        //case4) 오류 발생 
+        alert(a);
+        a = 1;   // windows.a = 1  이라는 의미를 가짐.
+
+        // 함수 사용 case1) 
+        var f1 = function(){
+            a = 1;   // ==> window.a = 1;  --> 전역 객체
+            a ++;    // 전역 객체 a 를 사용
+            alert(a);   // 2 출력
+        }
+        f1();
+    
+        // 함수 사용 case2) 
+        // 함수 안에서 사용할 때만 지역 변수 사용 가능 (var 사용).
+        var f2 = function(){
+            a = 1;   // ==> window.a = 1;  --> 전역 객체
+            var a = 3;
+            a ++;    // 지역 변수 a 를 사용
+            alert(a);   // 4 출력
+        }   
+        f2();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function init(){
+            var btnPrint = document.getElementById("btn-print")
+            
+            // 익명 함수 쓰면서 변경됨 아래로 변경됨
+            //btnPrint.onclick = function printResult()
+            btnPrint.onclick = function ()
+            {
+                // 위에 btnPrint 를 사용하므로써 필요 없어짐.
+                // var btnPrint = document.getElementById("btn-print");
+
+                var x = prompt("x 값을 입력하세요", 0);  
+                var y = prompt("y 값을 입력하세요", 0);  
+                
+                x = parseInt(x);
+                y = parseInt(y);
+                btnPrint.value = x+y;
+            }  
+        }
+
+        window.onload = init;
+    </script>
+    <input type="button" value="클릭" id="btn-print" /><br />
+    <span id="span1">스팬입니다.</span>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        body {
+            font-size: 20px;
+            color: green;
+        }
+    </style> -->
+    <script src="javascript1-dom.js"></script>
+    <link rel="stylesheet" href="javascript1-dom.css">
+</head>
+<body>
+    <section id="section7">
+        <!-- 34강-노드 복제 및 템플릿 복제 
+        https://www.youtube.com/watch?v=Hgi3yu-gB8A&list=PLq8wAnVUcTFWhQrIXNN6kPYXJA6X2IQM4&index=34
+         -->
+        <h1>Ex7 - 노드 복제와 템플릿 태그 </h1>
+        <div>                
+            <input type="button" class="clone-button" value="복제" />                
+            <input type="button" class="template-button" value="템플릿 복제" />
+        </div>
+        <!-- html5 에서 사용되는 하나의 틀 선언 -->
+        <!-- <template>
+            <tr>
+                <td></td>
+                <td><a href=""></a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </template> -->
+        <table border="1" class="notice-list">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>작성일</td>
+                    <td>작성자</td>
+                    <td>조회수</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="1">자바스크립트란..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="2">유투브에 끌려다니지 않으려고 했는데....ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+                <tr>                        
+                    <td>3</td>
+                    <td><a href="3">기본기가 튼튼해야....</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="4">근데 조회수가 ㅜㅜ..</a></td>
+                    <td>2019-01-25</td>
+                    <td>newlec</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <hr />
+
+
+    <section id="section6">
+            <!-- 32강-텍스트노드를 동적으로 추가/삭제 ==> 이론적
+            https://www.youtube.com/watch?v=Yjt_vaC7WEA&list=PLq8wAnVUcTFWhQrIXNN6kPYXJA6X2IQM4&index=32
+            33강-엘리먼트 노드 추가 그리고 주의 할점 ==> 현실적
+            https://www.youtube.com/watch?v=QdMX4K5x28I&list=PLq8wAnVUcTFWhQrIXNN6kPYXJA6X2IQM4&index=33 -->
+            <h1>Ex6 - 노드조작 : 메뉴추가 (createTextNode, Element) </h1>
+            <div>
+                <input class="title-input" name="title" />
+                <input type="button" class="add-button" value="추가" />
+                <input type="button" class="del-button" value="삭제" />
+            </div>
+            <ul class="menu-list">
+                <li><a href="">aaa</a></li>
+                <li><a href="">bbb</a></li>
+            </ul>
+            <!-- <div class="menu-list">
+                
+            </div> -->
+        </section>
+        <hr/>
+    
+    <section id="section6">
+    <!-- 32강-텍스트노드를 동적으로 추가/삭제 ==> 이론적-->
+    <!-- 33강-엘리먼트 노드 추가 그리고 주의 할점 ==> 현실적-->
+        <h1>Ex6 - 노드조작 : 메뉴추가 (createTextNode, Element) </h1>
+        <div>
+            <input class="title-input" name="title" />
+            <input type="button" class="add-button" value="추가" />
+            <input type="button" class="del-button" value="삭제" />
+        </div>
+        <ul class="menu-list">
+            <li><a href="">aaa</a></li>
+            <li><a href="">bbb</a></li>
+        </ul>
+        <!-- <div class="menu-list">
+            
+        </div> -->
+    </section>
+    <hr/>
+
+    <section id="section5">
+        <h1>Ex5 : 엘리먼트 노드의 속성 & CSS 속성 변경</h1>
+        <div>
+            <!-- 입력box 는 크게 3가지가 있을 수 있다. -->
+            <!-- 1. 직접 typing 입력,  2. img select   3. html5 : datalist  -->
+            <!-- <input class="src-input" />     -->
+            <input class="src-input" list="img-list"/>
+            <datalist id="img-list">
+                <option value="img1.jpg">img1</option>
+                <option value="img2.jpg">img2</option>
+                <option value="img3.jpg">img3</option>
+            </datalist>
+            <select class="img-select">
+                <option value="img1.jpg">img1</option>
+                <option value="img2.jpg">img2</option>
+                <option value="img3.jpg">img3</option>
+            </select>
+            <input type="color" class="color-input" />
+            <input class="change-button" type="button" value="변경하기" />
+        </div>
+        <div>
+            <img class="img" src="images/img1.jpg" style="border:1px solid red;"/>
+        </div>
+    </section>
+    <hr />
+
+    <section id="section4">
+        <h1>Ex4 : childNodes 를 이용한 노드 선택</h1>
+        <!-- <div class="box"><input /><input /> 사용시 whitespace 가 없다. -->
+        <div class="box">
+            <input />
+            <input />
+            
+        </div>
+    </section>
+    <hr />
+
+    <section id="section3">
+        <h1>Ex3 : Selectors API Level1</h1>
+        <div>
+            <!-- step2) 앞으로는 step1) 부분을 아래 name="x" 로 정의한 step2) 방식을 사용 예정 -->
+            <input name="x" type="text" value="0" dir="rtl"/>
+            +
+            <!-- step1) class 로 정의 하여 사용 -->
+            <input class="txt-y" type="text" value="0" dir="rtl"/>
+            <input class="btn-add" type="button" value="=">
+            <input class="txt-sum" type="text" value="0" readonly dir="rtl"/>
+            
+        </div>
+    </section>
+    <hr />
+
+    <section id="section2">
+        <h1>Ex2 : 엘리먼트 선택방법 개선하기</h1>
+        <div>
+            <input class="txt-x" type="text" value="0" dir="rtl"/>
+            +
+            <input class="txt-y" type="text" value="0" dir="rtl"/>
+            <input class="btn-add" type="button" value="=">
+            <input class="txt-sum" type="text" value="0" readonly dir="rtl"/>
+            <!-- id는 문서 내에서 유일해야 하므로 아래와 같이 class 로 변경 
+            <input id="txt-x" type="text" value="0" dir="rtl"/>
+            +
+            <input id="txt-y" type="text" value="0" dir="rtl"/>
+            <input id="btn_add" type="button" value="=">
+            <input id="txt-sum" type="text" value="0" readonly dir="rtl"/> -->
+            
+        </div>
+    </section>
+    <hr />
+
+    <section>
+        <h1>Ex1 : 계산기 프로그램</h1>
+        <div>
+            <input id="txt-x" type="text" value="0" dir="rtl"/>
+            +
+            <input id="txt-y" type="text" value="0" dir="rtl"/>
+            <input id="btn-add" type="button" value="=">
+            <input id="txt-sum" type="text" value="0" readonly dir="rtl"/>
+        </div>
+    </section>
+    <hr />
+</body>
+</html>

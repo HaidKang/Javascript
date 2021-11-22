@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// alert 사용
+        var x = 3;
+        var y = 0; 
+        // 덧셈 결과를 alet 으로 출력
+        alert(x+y);   // windows.alert(x+y) 가 정확한 표현이나, 모두 인지하고 있으므로 사용
+
+// prompt 사용
+        var x, y;
+        x = prompt("x 값을 입력하세요", 0);  //ex. 3 입력값은 문자열
+        y = prompt("y 값을 입력하세요", 0);  //ex. 4 입력값은 문자열
+        alert(x + y)  // 결과 34  ==> 문자열 이기 때문에
+
+        // 그럼 어떻게 정수로 바꿀수 있을까?  ==> parseInt()
+        // 참고 site : https://developer.mozilla.org
+
+        var a = prompt("a 값을 입력하세요", 0);  
+        var b = prompt("b 값을 입력하세요", 0);  
+
+        a = parseInt(a);
+        b = parseInt(b);
+
+        alert(typeof a);
+        alet(a + b);
+
+        // 게시글 삭제를 확인 하기 
+        var answer;
+        answer = confirm("정말로 삭제 하시겠습니까?");
+        if(answer)
+            alert("삭제 되었습니다."); 
+
+    </script>
+</body>
+</html>

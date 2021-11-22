@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printResult()
+        {
+            var x = prompt("x 값을 입력하세요", 0);  
+            var y = prompt("y 값을 입력하세요", 0);  
+            
+            x = parseInt(x);
+            y = parseInt(y);
+            
+            btnPrint.value = x+y;    // 테그 내에 있는 값을 변경(value 속성 사용)
+            span1.innerText = x=y;   // 테그로 감싸고 있는 값을 변경(innerText 속성 사용)
+            
+        }
+    </script>
+    <input type="button" value="클릭" onclick="printResult();" id="btnPrint" /><br />
+    <span id="span1" onclick="alert('hello');">스팬입니다.</span>
+</body>
+</html>
